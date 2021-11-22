@@ -6,10 +6,9 @@ def get_total_cash(total_cash):
     return total_cash["admin"]["total_cash"]
 
 
-# def add_or_remove_cash(total_cash, amount):
-#     cash = 0
-#     cash == total_cash["admin"]["total_cash"] + amount 
-#     return cash
+def add_or_remove_cash(pet_shop, amount):
+    pet_shop["admin"]["total_cash"] += amount 
+
 
 
 # def add_or_remove_cash(total_cash, amount): -10 ## I know this will be the same but subtract as above
@@ -18,29 +17,27 @@ def get_total_cash(total_cash):
 def get_pets_sold(pets_sold):
     return pets_sold["admin"]["pets_sold"]
 
-# def increase_pets_sold(): ##this will be similar to those above, but calling to increase "pets_sold" rather than "total_cash"
-#     return 
+def increase_pets_sold(pet_shop, amount): ##this will be similar to those above, but calling to increase "pets_sold" rather than "total_cash"
+    pet_shop["admin"]["pets_sold"] += amount
 
 def get_stock_count(pet_shop):
     return len(pet_shop["pets"]) 
 
 
-# def get_pets_by_breed(breed, pet_breed):
-#     pet_breed = ["pets"]["breed"] #list indices must be integers or slices, not str 
+# def get_pets_by_breed(pet_shop, pet_breed): 
 #     number_of_breed = []
-#     for breed in pet_breed:
-#         if breed == "British Shorthair":
-#             number_of_breed.append(breed) 
-#     len(number_of_breed)
+#     for pet in pet_shop["pets"]:
+#         if pet["breed"] == pet_breed:
+#             number_of_breed.append(pet) 
+#     return len(number_of_breed)
 
+def get_pets_by_breed(pet_shop, pet_breed): 
+    number_of_breed = 0
+    for pet in pet_shop["pets"]:
+        if pet["breed"] == pet_breed:
+            number_of_breed += 1
+    return number_of_breed
 
-
-# def get_pets_by_breed(breed, pet_shop): dalmation
-#     number_of_breed = []
-#     for breed in pet_shop:
-#         if ["breed"] == "British Shorthair":
-#             number_of_breed.append(breed) 
-#     return number_of_breed 
 
 # def find_pet_by_name(pet, pet_shop): #I get what I need to do but I really can't figure out how to access the cc_pet_shop (dictionary), "into pets" (list) and then access the dictionary key "name" to see if the value matches Arthur
 #     found_pet = None 
@@ -67,12 +64,12 @@ def get_stock_count(pet_shop):
 # 
 #     return found_record 
 
-def find_pet_by_name (pet, pet_shop):
-    pet_name = None 
-    for pet in pet_shop["pets"]: #TypeError: string indices must be integers
-        if pet["name"] == "Arthur":
-            pet_name = pet 
-    return pet_name 
+# def find_pet_by_name (pet, pet_shop):
+#     pet_name = None 
+#     for pet in pet_shop["pets"]: #TypeError: string indices must be integers
+#         if pet["name"] == "Arthur":
+#             pet_name = pet 
+#     return pet_name 
 
 
 def remove_pet_by_name ():
