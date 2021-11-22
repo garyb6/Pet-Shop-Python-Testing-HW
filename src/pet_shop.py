@@ -9,11 +9,6 @@ def get_total_cash(total_cash):
 def add_or_remove_cash(pet_shop, amount):
     pet_shop["admin"]["total_cash"] += amount 
 
-
-
-# def add_or_remove_cash(total_cash, amount): -10 ## I know this will be the same but subtract as above
-
-
 def get_pets_sold(pets_sold):
     return pets_sold["admin"]["pets_sold"]
 
@@ -22,7 +17,6 @@ def increase_pets_sold(pet_shop, amount): ##this will be similar to those above,
 
 def get_stock_count(pet_shop):
     return len(pet_shop["pets"]) 
-
 
 # def get_pets_by_breed(pet_shop, pet_breed): 
 #     number_of_breed = []
