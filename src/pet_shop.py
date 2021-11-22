@@ -41,25 +41,28 @@ def find_pet_by_name(pet_shop, pet_name):
     return found_pet 
 
 
-def remove_pet_by_name ():
-    pass
+def remove_pet_by_name (pet_shop, pet_name):
+    for pet in pet_shop["pets"]: 
+        if pet["name"] == pet_name:
+            pet_shop["pets"].remove(pet) 
 
-def add_pet_to_stock():
-    pass
+def add_pet_to_stock(pet_shop, new_pet):
+    pet_shop["pets"].append(new_pet) 
 
 def get_customer_cash(customer_cash):
     return customer_cash ["cash"]
 
-def remove_customer_cash(): #similar to total cash manipulation above
-    pass 
+def remove_customer_cash(customer_cash, amount):
+    customer_cash["cash"] -= amount 
 
-def get_customer_pet_count():
-    pass 
+def get_customer_pet_count(customers):
+    return len(customers["pets"]) 
 
-def add_pet_to_customer ():
-    pass 
+def add_pet_to_customer (customers, new_pet):
+    customers["pets"].append(new_pet)
 
 #optional
 #ensure code works if elif else 
-def customer_can_afford_pet ():
-    pass
+def customer_can_afford_pet (customer, new_pet):
+    if customer["cash"] > 100
+    
