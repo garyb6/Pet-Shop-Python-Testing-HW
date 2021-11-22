@@ -25,8 +25,8 @@ def get_stock_count(pet_shop):
     return len(pet_shop["pets"]) 
 
 
-# def get_pets_by_breed(breed, pets):
-#     pet_breed = ["pets"]["breed"]
+# def get_pets_by_breed(breed, pet_breed):
+#     pet_breed = ["pets"]["breed"] #list indices must be integers or slices, not str 
 #     number_of_breed = []
 #     for breed in pet_breed:
 #         if breed == "British Shorthair":
@@ -67,6 +67,14 @@ def get_stock_count(pet_shop):
 # 
 #     return found_record 
 
+def find_pet_by_name (pet, pet_shop):
+    pet_name = None 
+    for pet in pet_shop["pets"]: #TypeError: string indices must be integers
+        if pet["name"] == "Arthur":
+            pet_name = pet 
+    return pet_name 
+
+
 def remove_pet_by_name ():
     pass
 
@@ -76,7 +84,7 @@ def add_pet_to_stock():
 def get_customer_cash(customer_cash):
     return customer_cash ["cash"]
 
-def remove_customer_cash():
+def remove_customer_cash(): #similar to total cash manipulation above
     pass 
 
 def get_customer_pet_count():
